@@ -1,6 +1,6 @@
 <?php
-//require_once "page.php";
-//require_once "line.php";
+require_once "page.php";
+require_once "line.php";
 //chua lam
 // khoi tao doi tg document
 $document = new DOMDocument();
