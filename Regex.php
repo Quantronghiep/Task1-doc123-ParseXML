@@ -6,7 +6,6 @@ require_once "font.php";
 $path = "sample.xml";
 $arrFont = [];
 $arrLine = [];
-$valueText = [];
 
 // Read entire file into string
 $xmlfile = file_get_contents($path);
