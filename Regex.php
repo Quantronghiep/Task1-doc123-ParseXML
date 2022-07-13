@@ -2,6 +2,7 @@
 require_once "page.php";
 require_once "line.php";
 require_once "font.php";
+require_once "document.php";
 
 $path = "sample.xml";
 $arrFont = [];
@@ -74,10 +75,14 @@ foreach ($arrPageExplode as $pageExplode) {
         $heightPage = $pageTag->getAttribute('height');
         $widthPage = $pageTag->getAttribute('width');
         $page = new Page($numberPage, $positionPage, $topPage, $leftPage, $heightPage, $widthPage, $arrLine, $arrFont);
+        $arrPage[] = $page;
     }
     unset($arrFont);
     unset($arrLine);
 
-    echo $page->getHtml();
+//    echo $page->getHtml();
 
 }
+
+$document = new Document($arrPage);
+$document->getHtmlDocument();
