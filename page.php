@@ -14,7 +14,7 @@ class Page{
         $this->fonts = $fonts;
         $this->lines = $lines;
     }
-    public function getHtml(){
+    public function getHtmlPage(){
         foreach ($this->lines as $line){
             $arrLine[] =  $line->getHtmlLine();
         }
