@@ -1,8 +1,8 @@
 <?php
-require_once "page.php";
-require_once "line.php";
-require_once "font.php";
-require_once "document.php";
+require_once "Page.php";
+require_once "Line.php";
+require_once "Font.php";
+require_once "Document.php";
 
 $path = "sample.xml";
 $arrFont = [];
@@ -43,9 +43,7 @@ foreach ($arrPageExplode as $pageExplode) {
             $text = new Line($topText, $leftText, $heightText, $widthText, $fontText, $valueText);
             $arrLine[] = $text;
         }
-    }
 
-    foreach ($arrLineOfOnePage as $line) {
         $patternFont = '/<fontspec .*?\/>/';
         $checkTagText = preg_match($patternFont, $line);
         if ($checkTagText) {
@@ -68,7 +66,6 @@ foreach ($arrPageExplode as $pageExplode) {
         @$doc->loadHTML($pageTagString);
         $pageTag = $doc->getElementsByTagName('page')->item(0);
         $numberPage = $pageTag->getAttribute('number');
-//        echo $numberPage;
         $positionPage = $pageTag->getAttribute('position');
         $topPage = $pageTag->getAttribute('top');
         $leftPage = $pageTag->getAttribute('left');
